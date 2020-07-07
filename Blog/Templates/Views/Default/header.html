@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" http-equiv="Content-Type" content="text/html">
+    <title>{% block title %}
+        Mi Blog
+        {% endblock title %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/login.css' %}">
+    <link rel="stylesheet" href="{% static '/css/base.css' %}">
+    <link rel='shortcut icon' href="{% static '/img/milogo.png' %}">
+    <link rel="stylesheet" href="{% static '/fontawesome-free-5.13.0-web/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static '/fontawesome-free-5.13.0-web/css/all.min.css' %}">
+</head>
+
+<body>
+    <header>
+        <nav class="nav" id="nav">
+            <div class="logo">
+                <a href="/">
+                    <img src="{% static '/img/milogo.png' %}" alt="" class="img">
+                    <p>Mi Blog</p>
+                </a>
+
+
+            </div>
+            <ul class="nav-menu">
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="/admin">Login</a></li>
+
+            </ul>
+
+        </nav>
+        {% block bg-header %}
+        <div class="bg-image">
+            <div class="welcome">
+                <h1>Bienvenidos </h1>
+                <p> by : Joel Huacre Enciso </p>
+            </div>
+        </div>
+        {% endblock bg-header %}
+
+    </header>
+    {% block content %}
+
+    {% endblock content %}
+
+    <footer class="footer">
+        <div class="icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-whatsapp"></i>
+        </div>
+        <p>&copy; 2020 Joel Huacre Enciso</p>
+    </footer>
+</body>
+{% load static %}
+
+<script type="text/javascript" src="{%static 'js/jquery-3.4.1.min.js' %}"></script>
+<script type="text/javascript" src="{%static 'js/pagination2.js' %}"></script>
+<script type="text/javascript" src="{%static 'js/search.js' %}"></script>
+
+</html>

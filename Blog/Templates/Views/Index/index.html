@@ -1,0 +1,41 @@
+{% extends "Views/Default/header.html" %}
+{% block content %}
+
+<main>
+    <div class="container">
+        <form action="{% url 'buscar' %}" method="GET">
+            <div class="form-row">
+                <input type="text" placeholder="Buscar" name="filtrar" id="filtrar">
+                <input type="submit" value="Buscar" class="button">
+                <p>Mostrando {{count}} registros</p>
+
+            </div>
+        </form>
+
+    </div>
+
+    <div class="" id="BlogView">
+        {% for item in blog  %}
+        <div class="blog-content container ">
+            <div class="blog-img"><img src="{{item.image.url}}">
+            </div>
+
+            <div class="blog-info">
+                <div class="blog-date">{{item.created}}</div>
+
+                <h1>{{item.title}}</h1>
+                <p>{{item.description}}</p>
+                <div class="btn-see"> <a href="#" class="button">Leer más</a>
+                </div>
+
+            </div>
+        </div>
+
+        {% endfor %}
+
+
+    </div>
+    {% include "Views/Index/pagination.html" %}
+
+</main>
+{% endblock content %}
